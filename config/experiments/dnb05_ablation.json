@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "experiment": "Causal DNb05 outgoing ablation during thermo-hygrosensory stimulation",
+  "created_at": "2026-09-21T21:16:42+08:00",
+  "provenance": {
+    "python": "3.11.16",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "flybrain_version": "0.1.0",
+    "device": "cuda",
+    "weights_sha256_before": "c29919aa44069a271b1ee978abe05fa9bf6e45e4ba3e436e92b624ef1b5be40c",
+    "weights_sha256_after": "c29919aa44069a271b1ee978abe05fa9bf6e45e4ba3e436e92b624ef1b5be40c"
+  },
+  "protocol": {
+    "conditions": [
+      "baseline",
+      "sham",
+      "0x"
+    ],
+    "channels": [
+      "warming",
+      "cooling",
+      "drying",
+      "moistening"
+    ],
+    "train_seeds": [
+      9101,
+      9203,
+      9307
+    ],
+    "held_out_test_seeds": [
+      10101,
+      10203
+    ],
+    "parallel_flies_per_seed": 8,
+    "samples_per_channel_train": 24,
+    "samples_per_channel_test": 16,
+    "stimulus_strength": 0.8,
+    "stimulus_seconds": 1.0,
+    "intervention": "bilateral DNb05 outgoing weights scaled in memory",
+    "readout": "baseline-trained logistic readout over the 50 strongest training-only descending features, excluding DNb05",
+    "bottleneck_support_rule": "held-out AUC or accuracy drop >= 0.20 under 0x"
+  },
+  "population_sizes": {
+    "DNb05": 2,
+    "descending_total": 1314,
+    "readout_features": 1312
+  },
+  "readout_training": {
+    "warming": {
+      "selected_features": 50,
+      "components": 5,
+      "lambda": 0.01,
+      "cross_validated_auc": 1.0
+    },
+    "cooling": {
+      "selected_features": 50,
+      "components": 5,
+      "lambda": 0.01,
+      "cross_validated_auc": 1.0
+    },
+    "drying": {
+      "selected_features": 50,
+      "components": 5,
+      "lambda": 1.0,
+      "cross_validated_auc": 0.984375
+    },
+    "moistening": {
+      "selected_features": 50,
+      "components": 5,
+      "lambda": 0.01,
+      "cross_validated_auc": 1.0
+    }
+  },
+  "conditions": {
+    "baseline": {
+      "intervention": {
+        "applied": false,
+        "factor": 1.0,
+        "presynaptic_neurons": 2,
+        "affected_connections": 0
+      },
+      "channels": {
+        "warming": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 9.75,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": 0.5625
+        },
+        "cooling": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 12.5625,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": 3.375
+        },
+        "drying": {
+          "held_out_auc": 0.921875,
+          "held_out_accuracy": 0.9375,
+          "true_positive_rate": 0.9375,
+          "false_positive_rate": 0.0625,
+          "DNb05_stimulated_hz": 9.0625,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": -0.125
+        },
+        "moistening": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 11.40625,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": 2.21875
+        }
+      }
+    },
+    "sham": {
+      "intervention": {
+        "applied": true,
+        "factor": 1.0,
+        "presynaptic_neurons": 2,
+        "affected_connections": 2243,
+        "original_absolute_weight": 8.521462440490723,
+        "scaled_absolute_weight": 8.521462440490723
+      },
+      "channels": {
+        "warming": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 9.75,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": 0.5625
+        },
+        "cooling": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 12.5625,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": 3.375
+        },
+        "drying": {
+          "held_out_auc": 0.921875,
+          "held_out_accuracy": 0.9375,
+          "true_positive_rate": 0.9375,
+          "false_positive_rate": 0.0625,
+          "DNb05_stimulated_hz": 9.0625,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": -0.125
+        },
+        "moistening": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 11.40625,
+          "DNb05_null_hz": 9.1875,
+          "DNb05_delta_hz": 2.21875
+        }
+      }
+    },
+    "0x": {
+      "intervention": {
+        "applied": true,
+        "factor": 0.0,
+        "presynaptic_neurons": 2,
+        "affected_connections": 2243,
+        "original_absolute_weight": 8.521462440490723,
+        "scaled_absolute_weight": 0.0
+      },
+      "channels": {
+        "warming": {
+          "held_out_auc": 0.992188,
+          "held_out_accuracy": 0.96875,
+          "true_positive_rate": 0.9375,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 9.8125,
+          "DNb05_null_hz": 9.125,
+          "DNb05_delta_hz": 0.6875
+        },
+        "cooling": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 0.96875,
+          "true_positive_rate": 0.9375,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 12.75,
+          "DNb05_null_hz": 9.125,
+          "DNb05_delta_hz": 3.625
+        },
+        "drying": {
+          "held_out_auc": 0.96875,
+          "held_out_accuracy": 0.90625,
+          "true_positive_rate": 0.875,
+          "false_positive_rate": 0.0625,
+          "DNb05_stimulated_hz": 9.0625,
+          "DNb05_null_hz": 9.125,
+          "DNb05_delta_hz": -0.0625
+        },
+        "moistening": {
+          "held_out_auc": 1.0,
+          "held_out_accuracy": 1.0,
+          "true_positive_rate": 1.0,
+          "false_positive_rate": 0.0,
+          "DNb05_stimulated_hz": 11.53125,
+          "DNb05_null_hz": 9.125,
+          "DNb05_delta_hz": 2.40625
+        }
+      }
+    }
+  },
+  "causal_comparison": {
+    "baseline_minus_0x_auc": {
+      "warming": 0.007812,
+      "cooling": 0.0,
+      "drying": -0.046875,
+      "moistening": 0.0
+    },
+    "baseline_minus_0x_accuracy": {
+      "warming": 0.03125,
+      "cooling": 0.03125,
+      "drying": 0.03125,
+      "moistening": 0.0
+    },
+    "baseline_vs_sham_auc_absolute_difference": {
+      "warming": 0.0,
+      "cooling": 0.0,
+      "drying": 0.0,
+      "moistening": 0.0
+    },
+    "DNb05_bottleneck_supported": {
+      "warming": false,
+      "cooling": false,
+      "drying": false,
+      "moistening": false
+    }
+  },
+  "quality_checks": {
+    "original_weights_unchanged": true,
+    "sham_equivalent_to_baseline": true,
+    "DNb05_excluded_from_readout_features": true,
+    "all_channels_have_baseline_auc_at_least_0.8": true,
+    "targeted_cooling_and_moistening_have_baseline_auc_at_least_0.8": true,
+    "experiment_passed": true
+  },
+  "runtime_seconds": 86.496,
+  "interpretation_limits": [
+    "The intervention removes DNb05 outgoing influence but does not prevent DNb05 itself from firing.",
+    "Readout features exclude DNb05, so any effect measures its causal influence on the rest of the descending population.",
+    "A negative bottleneck result does not prove DNb05 has no motor role outside this LIF model or stimulus protocol.",
+    "No condition controls movement."
+  ]
+}

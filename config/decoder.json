@@ -1,0 +1,204 @@
+{
+  "dt": 0.02,
+  "window_steps": 13,
+  "publish_steps": 5,
+  "alpha": 0.3,
+  "deadzone": 0.05,
+  "turn_sign": 1.0,
+  "max_turn_rate": 2.2,
+  "fixed_speed": 1.0,
+  "action_threshold": 0.6,
+  "action_hold_seconds": 0.8,
+  "odor_baseline_hz": 0.3,
+  "odor_scale_hz": 25.5,
+  "odor_turn_gain": 2.5,
+  "baseline": {
+    "steer_left": 0.5625,
+    "steer_right": 0.0625,
+    "escape_left": 0.3125,
+    "escape_right": 0.625
+  },
+  "scale": {
+    "steer_left": 5.5625,
+    "steer_right": 5.0625,
+    "escape_left": 49.0,
+    "escape_right": 46.3
+  },
+  "calibration": {
+    "created_at": "2026-09-17T20:00:09",
+    "device": "cuda",
+    "flies": 8,
+    "seed": 1000,
+    "stimulus_strength": 0.8,
+    "responses_hz": {
+      "target_left": {
+        "steer_left": [
+          4.0,
+          4.0,
+          5.0,
+          4.0,
+          5.0,
+          4.0,
+          4.0,
+          5.0
+        ],
+        "steer_right": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "escape_left": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "escape_right": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0,
+          1.0
+        ]
+      },
+      "target_right": {
+        "steer_left": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "steer_right": [
+          3.0,
+          4.0,
+          4.0,
+          4.0,
+          4.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        "escape_left": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "escape_right": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          0.0
+        ]
+      },
+      "loom_left": {
+        "steer_left": [
+          0.0,
+          2.0,
+          0.0,
+          1.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        "steer_right": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "escape_left": [
+          46.0,
+          48.0,
+          44.0,
+          45.0,
+          49.0,
+          46.0,
+          49.0,
+          44.0
+        ],
+        "escape_right": [
+          0.0,
+          2.0,
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0
+        ]
+      },
+      "loom_right": {
+        "steer_left": [
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "steer_right": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "escape_left": [
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          1.0,
+          1.0
+        ],
+        "escape_right": [
+          44.0,
+          47.0,
+          41.0,
+          46.0,
+          45.0,
+          44.0,
+          45.0,
+          45.0
+        ]
+      }
+    }
+  }
+}

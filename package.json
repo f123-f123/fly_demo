@@ -1,0 +1,10 @@
+{
+  "name": "flybrain-control-demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Three.js control terminal for the FlyBrain closed-loop demo",
+  "dependencies": {
+    "three": "0.186.0"
+  }
+}
+

@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "experiment": "Localized reward-modulated pair-timing plasticity on LC10a outgoing synapses",
+  "created_at": "2026-09-21T21:23:06+08:00",
+  "provenance": {
+    "python": "3.11.16",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "flybrain_version": "0.1.0",
+    "device": "cuda",
+    "weights_sha256_before": "c29919aa44069a271b1ee978abe05fa9bf6e45e4ba3e436e92b624ef1b5be40c",
+    "weights_sha256_after": "c29919aa44069a271b1ee978abe05fa9bf6e45e4ba3e436e92b624ef1b5be40c",
+    "decoder_sha256": "09c99e59215b97068891e94a1377e84c309b4ffb9ec6d032bdfdbb24f59227db",
+    "decoder_parameters": {
+      "dt": 0.02,
+      "window_steps": 13,
+      "publish_steps": 5,
+      "alpha": 0.3,
+      "deadzone": 0.05,
+      "turn_sign": 1.0,
+      "max_turn_rate": 2.2,
+      "fixed_speed": 1.0,
+      "action_threshold": 0.6,
+      "action_hold_seconds": 0.8,
+      "odor_baseline_hz": 0.3,
+      "odor_scale_hz": 25.5,
+      "odor_turn_gain": 2.5,
+      "baseline": {
+        "steer_left": 0.5625,
+        "steer_right": 0.0625,
+        "escape_left": 0.3125,
+        "escape_right": 0.625
+      },
+      "scale": {
+        "steer_left": 5.5625,
+        "steer_right": 5.0625,
+        "escape_left": 49.0,
+        "escape_right": 46.3
+      },
+      "calibration": {
+        "created_at": "2026-09-17T20:00:09",
+        "device": "cuda",
+        "flies": 8,
+        "seed": 1000,
+        "stimulus_strength": 0.8,
+        "responses_hz": {
+          "target_left": {
+            "steer_left": [
+              4.0,
+              4.0,
+              5.0,
+              4.0,
+              5.0,
+              4.0,
+              4.0,
+              5.0
+            ],
+            "steer_right": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "escape_left": [
+              1.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "escape_right": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          },
+          "target_right": {
+            "steer_left": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "steer_right": [
+              3.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              3.0,
+              3.0,
+              3.0
+            ],
+            "escape_left": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "escape_right": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              2.0,
+              0.0,
+              0.0
+            ]
+          },
+          "loom_left": {
+            "steer_left": [
+              0.0,
+              2.0,
+              0.0,
+              1.0,
+              1.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "steer_right": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "escape_left": [
+              46.0,
+              48.0,
+              44.0,
+              45.0,
+              49.0,
+              46.0,
+              49.0,
+              44.0
+            ],
+            "escape_right": [
+              0.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          },
+          "loom_right": {
+            "steer_left": [
+              2.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "steer_right": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "escape_left": [
+              1.0,
+              2.0,
+              0.0,
+              0.0,
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "escape_right": [
+              44.0,
+              47.0,
+              41.0,
+              46.0,
+              45.0,
+              44.0,
+              45.0,
+              45.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "protocol": {
+    "conditions": [
+      "frozen",
+      "sham_reward",
+      "random_reward",
+      "contingent_reward"
+    ],
+    "epochs": 4,
+    "parallel_flies": 8,
+    "train_seed_base": 11101,
+    "held_out_test_seeds": [
+      12101,
+      12203,
+      12307
+    ],
+    "train_strength": 0.35,
+    "test_strength": 0.35,
+    "warmup_seconds": 1.0,
+    "stimulus_seconds": 1.0,
+    "learning_rate": 1.0,
+    "eligibility": "one-step pre-before-post minus 0.5 times post-before-pre coactivity",
+    "reward": "correct direction +1, incorrect -1; random control is balanced +/-1",
+    "weight_bounds": [
+      0.5,
+      1.5
+    ],
+    "decoder_frozen": true
+  },
+  "population_sizes": {
+    "LC10a": 275,
+    "selected_outgoing_synapses": 39282,
+    "DNa02_left": 1,
+    "DNa02_right": 1
+  },
+  "conditions": {
+    "frozen": {
+      "training_history": [
+        {
+          "epoch": 1,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.8125,
+          "training_margin_hz": 1.8125,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        },
+        {
+          "epoch": 2,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.9375,
+          "training_margin_hz": 1.875,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        },
+        {
+          "epoch": 3,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.8125,
+          "training_margin_hz": 1.375,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        },
+        {
+          "epoch": 4,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.9375,
+          "training_margin_hz": 2.0,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        }
+      ],
+      "weights": {
+        "selected_synapses": 39282,
+        "mean_multiplier": 1.0,
+        "std_multiplier": 0.0,
+        "minimum_multiplier": 1.0,
+        "maximum_multiplier": 1.0,
+        "fraction_changed": 0.0
+      },
+      "sides": {
+        "left": {
+          "steer_left_hz": {
+            "mean": 2.5,
+            "std": 0.645497
+          },
+          "steer_right_hz": {
+            "mean": 0.083333,
+            "std": 0.276385
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 2.5,
+            "std": 0.645497
+          },
+          "turn": {
+            "mean": -0.371875,
+            "std": 0.127386
+          },
+          "turn_magnitude": {
+            "mean": 0.371875,
+            "std": 0.127386
+          },
+          "direction_accuracy": 1.0,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.338486,
+            "std": 0.012613
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.051967,
+            "std": 0.001322
+          }
+        },
+        "right": {
+          "steer_left_hz": {
+            "mean": 0.208333,
+            "std": 0.406116
+          },
+          "steer_right_hz": {
+            "mean": 1.666667,
+            "std": 0.849837
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 1.666667,
+            "std": 0.849837
+          },
+          "turn": {
+            "mean": 0.303646,
+            "std": 0.168653
+          },
+          "turn_magnitude": {
+            "mean": 0.310938,
+            "std": 0.154798
+          },
+          "direction_accuracy": 0.916667,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.345296,
+            "std": 0.014437
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.052271,
+            "std": 0.002018
+          }
+        }
+      }
+    },
+    "sham_reward": {
+      "training_history": [
+        {
+          "epoch": 1,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.6875,
+          "training_margin_hz": 1.6875,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        },
+        {
+          "epoch": 2,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 1.0,
+          "training_margin_hz": 2.1875,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        },
+        {
+          "epoch": 3,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.75,
+          "training_margin_hz": 1.625,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        },
+        {
+          "epoch": 4,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.875,
+          "training_margin_hz": 1.9375,
+          "mean_weight_multiplier": 1.0,
+          "std_weight_multiplier": 0.0
+        }
+      ],
+      "weights": {
+        "selected_synapses": 39282,
+        "mean_multiplier": 1.0,
+        "std_multiplier": 0.0,
+        "minimum_multiplier": 1.0,
+        "maximum_multiplier": 1.0,
+        "fraction_changed": 0.0
+      },
+      "sides": {
+        "left": {
+          "steer_left_hz": {
+            "mean": 2.5,
+            "std": 0.645497
+          },
+          "steer_right_hz": {
+            "mean": 0.083333,
+            "std": 0.276385
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 2.5,
+            "std": 0.645497
+          },
+          "turn": {
+            "mean": -0.371875,
+            "std": 0.127386
+          },
+          "turn_magnitude": {
+            "mean": 0.371875,
+            "std": 0.127386
+          },
+          "direction_accuracy": 1.0,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.338408,
+            "std": 0.012556
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.051965,
+            "std": 0.001321
+          }
+        },
+        "right": {
+          "steer_left_hz": {
+            "mean": 0.291667,
+            "std": 0.45453
+          },
+          "steer_right_hz": {
+            "mean": 1.583333,
+            "std": 0.812233
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 1.583333,
+            "std": 0.812233
+          },
+          "turn": {
+            "mean": 0.279687,
+            "std": 0.161084
+          },
+          "turn_magnitude": {
+            "mean": 0.286979,
+            "std": 0.147703
+          },
+          "direction_accuracy": 0.916667,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.345182,
+            "std": 0.014495
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.052136,
+            "std": 0.002049
+          }
+        }
+      }
+    },
+    "random_reward": {
+      "training_history": [
+        {
+          "epoch": 1,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.875,
+          "training_margin_hz": 1.625,
+          "mean_weight_multiplier": 1.00054,
+          "std_weight_multiplier": 0.012604
+        },
+        {
+          "epoch": 2,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.9375,
+          "training_margin_hz": 1.75,
+          "mean_weight_multiplier": 1.00029,
+          "std_weight_multiplier": 0.017785
+        },
+        {
+          "epoch": 3,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.8125,
+          "training_margin_hz": 1.9375,
+          "mean_weight_multiplier": 1.001129,
+          "std_weight_multiplier": 0.021808
+        },
+        {
+          "epoch": 4,
+          "mean_reward": 0.0,
+          "training_direction_accuracy": 0.875,
+          "training_margin_hz": 1.75,
+          "mean_weight_multiplier": 1.001493,
+          "std_weight_multiplier": 0.026105
+        }
+      ],
+      "weights": {
+        "selected_synapses": 39282,
+        "mean_multiplier": 1.001493,
+        "std_multiplier": 0.026105,
+        "minimum_multiplier": 0.835,
+        "maximum_multiplier": 1.1825,
+        "fraction_changed": 0.937096
+      },
+      "sides": {
+        "left": {
+          "steer_left_hz": {
+            "mean": 2.666667,
+            "std": 0.745356
+          },
+          "steer_right_hz": {
+            "mean": 0.166667,
+            "std": 0.372678
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 2.666667,
+            "std": 0.745356
+          },
+          "turn": {
+            "mean": -0.389583,
+            "std": 0.179759
+          },
+          "turn_magnitude": {
+            "mean": 0.389583,
+            "std": 0.179759
+          },
+          "direction_accuracy": 1.0,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.33941,
+            "std": 0.014663
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.052614,
+            "std": 0.002316
+          }
+        },
+        "right": {
+          "steer_left_hz": {
+            "mean": 0.25,
+            "std": 0.433013
+          },
+          "steer_right_hz": {
+            "mean": 1.708333,
+            "std": 0.67572
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 1.708333,
+            "std": 0.67572
+          },
+          "turn": {
+            "mean": 0.307292,
+            "std": 0.146705
+          },
+          "turn_magnitude": {
+            "mean": 0.307292,
+            "std": 0.146705
+          },
+          "direction_accuracy": 1.0,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.341835,
+            "std": 0.012651
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.053211,
+            "std": 0.00242
+          }
+        }
+      }
+    },
+    "contingent_reward": {
+      "training_history": [
+        {
+          "epoch": 1,
+          "mean_reward": 1.0,
+          "training_direction_accuracy": 1.0,
+          "training_margin_hz": 2.0625,
+          "mean_weight_multiplier": 1.039595,
+          "std_weight_multiplier": 0.041016
+        },
+        {
+          "epoch": 2,
+          "mean_reward": 0.875,
+          "training_direction_accuracy": 0.9375,
+          "training_margin_hz": 2.25,
+          "mean_weight_multiplier": 1.075397,
+          "std_weight_multiplier": 0.077278
+        },
+        {
+          "epoch": 3,
+          "mean_reward": 0.75,
+          "training_direction_accuracy": 0.875,
+          "training_margin_hz": 2.125,
+          "mean_weight_multiplier": 1.107645,
+          "std_weight_multiplier": 0.111441
+        },
+        {
+          "epoch": 4,
+          "mean_reward": 1.0,
+          "training_direction_accuracy": 1.0,
+          "training_margin_hz": 2.25,
+          "mean_weight_multiplier": 1.14912,
+          "std_weight_multiplier": 0.150382
+        }
+      ],
+      "weights": {
+        "selected_synapses": 39282,
+        "mean_multiplier": 1.14912,
+        "std_multiplier": 0.150382,
+        "minimum_multiplier": 0.93625,
+        "maximum_multiplier": 1.5,
+        "fraction_changed": 0.96268
+      },
+      "sides": {
+        "left": {
+          "steer_left_hz": {
+            "mean": 2.958333,
+            "std": 0.67572
+          },
+          "steer_right_hz": {
+            "mean": 0.083333,
+            "std": 0.276385
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 2.958333,
+            "std": 0.67572
+          },
+          "turn": {
+            "mean": -0.463542,
+            "std": 0.143837
+          },
+          "turn_magnitude": {
+            "mean": 0.463542,
+            "std": 0.143837
+          },
+          "direction_accuracy": 1.0,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.348608,
+            "std": 0.012297
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.05205,
+            "std": 0.001533
+          }
+        },
+        "right": {
+          "steer_left_hz": {
+            "mean": 0.291667,
+            "std": 0.45453
+          },
+          "steer_right_hz": {
+            "mean": 1.583333,
+            "std": 0.759203
+          },
+          "ipsilateral_DNa02_hz": {
+            "mean": 1.583333,
+            "std": 0.759203
+          },
+          "turn": {
+            "mean": 0.279687,
+            "std": 0.150382
+          },
+          "turn_magnitude": {
+            "mean": 0.286979,
+            "std": 0.135951
+          },
+          "direction_accuracy": 0.916667,
+          "whole_brain_rate_hz_per_neuron": {
+            "mean": 2.348066,
+            "std": 0.009886
+          },
+          "peak_fraction_spiking_per_step": {
+            "mean": 0.05322,
+            "std": 0.002388
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "turn_magnitude": {
+      "frozen": 0.341407,
+      "sham_reward": 0.329427,
+      "random_reward": 0.348438,
+      "contingent_reward": 0.37526
+    },
+    "ipsilateral_DNa02_hz": {
+      "frozen": 2.083334,
+      "contingent_reward": 2.270833
+    }
+  },
+  "quality_checks": {
+    "original_weights_unchanged": true,
+    "frozen_and_sham_equivalent": true,
+    "random_reward_control_below_contingent": false,
+    "contingent_reward_improves_turn_and_DNa02": false,
+    "contingent_network_not_globally_saturated": true,
+    "experiment_passed": false
+  },
+  "runtime_seconds": 121.723,
+  "interpretation_limits": [
+    "This is a deliberately local pair-timing eligibility rule, not evidence that the real LC10a pathway uses this exact plasticity mechanism.",
+    "Reward is an experimenter-defined task signal applied after each episode.",
+    "Only LC10a outgoing weights change; the Decoder remains frozen.",
+    "Weights are bounded and exist only in process memory; original connectome files are never modified."
+  ]
+}

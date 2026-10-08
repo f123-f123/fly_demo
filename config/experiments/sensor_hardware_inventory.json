@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-09-22T14:05:59.3992943+08:00",
+  "computer": "EVANESCENT",
+  "powershell": "7.6.5",
+  "serial_ports": [],
+  "matched_sensor_or_microcontroller_devices": [],
+  "physical_sensor_available": false,
+  "integration_verified": false,
+  "interpretation": [
+    "A generic serial port alone is not evidence of a temperature, humidity, or light sensor.",
+    "Integration can be verified only after a device model, wire protocol, calibration, and live readings are available."
+  ]
+}

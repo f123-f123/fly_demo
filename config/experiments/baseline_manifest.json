@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "baseline_id": "flyworld-flybrain-static-baseline-2026-09-22",
+  "created_at": "2026-09-22T14:06:37+08:00",
+  "freeze_kind": "retrospective manifest over preserved raw baseline conditions",
+  "provenance": {
+    "python": "3.11.16",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "flybrain_version": "0.1.0",
+    "weights_path": "C:\\Users\\HP\\fly-data\\weights.npz",
+    "weights_sha256": "c29919aa44069a271b1ee978abe05fa9bf6e45e4ba3e436e92b624ef1b5be40c",
+    "decoder_path": "E:\\neuro\\fly_demo\\config\\decoder.json",
+    "decoder_sha256": "09c99e59215b97068891e94a1377e84c309b4ffb9ec6d032bdfdbb24f59227db",
+    "steering_result_sha256": "eb1d79177adc4816289b54054b7c18e762787b41ce173a1b3c9a8e30614953c3",
+    "escape_result_sha256": "923bc1ddf77e032fa9e5b6b0f78977b5a3aeb1cfeeca69e0a29200127828b1d0",
+    "source_sha256": {
+      "app/__init__.py": "274c0f46f9f4383c5351386b90edfb7cb6740530cc714c5d99807cae9af94991",
+      "app/activity.py": "fe3f2611131d64e7d43ee6b7f8a28872a3c57a7c6b41dccf2c9f6b200ed3bb54",
+      "app/brain.py": "95fa2cec80f5c6c2a05dc3c7edb4c13e30fd1679ea82a905e64bbc95087015b7",
+      "app/calibrate.py": "7c4d85019161d58705eb92b2cb8c0e62ded4987fba268c672de82a3f75072661",
+      "app/config.py": "6feb26144767d6d6799065f422810e9aa436d6ef6ec27fc14ae0e85a2605753b",
+      "app/decoder.py": "cb449f73f2bb5cf1c16187799772eef7c75eb3109cb2e50a1b61cdd1a202a6a8",
+      "app/encoder.py": "a8ff34c2264e2dcc78b6a5fd4fd17e423d97b3fbcbcf3815c67594308950b4ca",
+      "app/interventions.py": "075a03e810a4c3e3b520d3e2ea8fbce12a83ad5e64f25ec678c99542d1490963",
+      "app/logging.py": "e9b436b70c7969954696dd8e511597a73af121d6d4a644b1bbd278d333fee7ea",
+      "app/runtime.py": "9eafccf07969deb0c8e2f9b2e9fe15d1ba42c8cc0770d2071bc3a1f3fad8515d",
+      "app/server.py": "139ed8da543c1219c9c48b5488201c4311e5e103760cd4c194ef3d0d51f5e0c0",
+      "app/world.py": "272ca6f18d3cf7918dd13fe1e36a7d973d104c0c627ac45f428439268e8363de",
+      "calibrate.ps1": "238d5a5dfede5227b1361dbc6663bed5ab0645b794276992a584162c674f681f",
+      "package-lock.json": "fd64ce8d217f467bc05b79ea621a3a782b76d8d20eef13798a74c903144e7322",
+      "package.json": "42400dadbae0bcd3ab463112b21eb004789ddfb0201c38f65fbd6e869fd9cb2d",
+      "requirements.txt": "4bd91eff365f65cc51ef217efcf5e5685a0e3f210ab11d39971eef7fd0298347",
+      "scripts/audit_neural_routes.py": "e37a19f757dac5193cb543b32d6036c46887449924ba7bbf1b1e8172157228ab",
+      "scripts/audit_sensor_hardware.ps1": "7afcec051ed44b61b44ad8afaf8572dad6391841b1c2a029eea3a4731ef69635",
+      "scripts/freeze_baseline.py": "68dbaeff874e02820be2411a525837443a291db52156f24f0f3d7d724c694ec2",
+      "scripts/probe_server.py": "1eb3959e76c91bd97ce2ad93651678e2d8fff0e1830eb86ad88d57d9bed38df9",
+      "scripts/run_decoder_robustness.py": "67bb2fb4289bc5e4cabfb8a5a2d21f0a50cbc618a5c169ad882d32cafd8fd940",
+      "scripts/run_dnb05_ablation.py": "945aeb56cd94da1e478396ca7afa66ec204ad693d7c91d73ceed319c748822dc",
+      "scripts/run_escape_weight_intervention.py": "d948a3646c3ede4fcabd2d1cd5884a33aee0df8866eabeb8a3a563f354d50e26",
+      "scripts/run_joint_adaptation.py": "cd83b93131d542c19adfaab9716e84850912900d3272c20b90f9cdea1f587665",
+      "scripts/run_local_stdp.py": "a3bd48db71ea3e91060ca86e01b643253936e7f82d2b9a7ace2f8620141f6764",
+      "scripts/run_multisensory_encoding.py": "6dfd0bdf0887f3440feaa7c88a410251974400d4870df04bc725bb5c0bab2be8",
+      "scripts/run_reward_plasticity.py": "8cdd2736f2d79487c4b937b84ac0bb8866ee109baae171f5b4d5f52869c3d9e4",
+      "scripts/run_weight_intervention.py": "2e535c9ff2dd2067b45a347d959368373aee928bc72528c12765f05b90129da3",
+      "scripts/scan_sensory_descending.py": "2cd201e49c2bbac6c77f99cc5c2ab934f96d44ec62e2aab4ec30794d8ea7d6e5",
+      "start.ps1": "e4bc92a052fa3b5898a27d0bb3cdc91394d34f68c8eb8a355717997beec2576b",
+      "tests/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "tests/test_activity.py": "af420c18686e6fdb8331fc53e77f71f8c92a4cc94f5db81b379d84b40c92101c",
+      "tests/test_decoder.py": "1e9799ce868610a1a96da923e0ec8c60f1224b20355a449ed95ce0284cae0834",
+      "tests/test_interventions.py": "a581e00ab042030cc00ea9ea4b97ec761123b330260a40e205f4235cc799cde0",
+      "tests/test_plasticity.py": "3269406d46306af5c52d320bbc5c2e566595d5b7f174bc10eba1f47e1ec4af32",
+      "tests/test_server_broadcast.py": "96d0fd99bc6e15cc3d0f8abf05b82d87c11790cbe415840fbf585421613f5ee8",
+      "tests/test_world_encoder.py": "f4d07bf23303cdfcb33ed93c66508006c442420a8b4d21b9a60f2d3cb72d1bbc",
+      "web/app.js": "b0a5c45bb6cbba8ef23bd1fe24b7a89322cb7ca5799faa5560676ba7351c03d9",
+      "web/index.html": "6308055ec1c9683a38f251465df50af5f144e9d7252cc7939e0cd14c5b1dbf32",
+      "web/styles.css": "3b3a4659c69c1384637b51414ebfc2883725bae48572ac4bb3ab748e37033cce"
+    }
+  },
+  "decoder_parameters": {
+    "dt": 0.02,
+    "window_steps": 13,
+    "publish_steps": 5,
+    "alpha": 0.3,
+    "deadzone": 0.05,
+    "turn_sign": 1.0,
+    "max_turn_rate": 2.2,
+    "fixed_speed": 1.0,
+    "action_threshold": 0.6,
+    "action_hold_seconds": 0.8,
+    "odor_baseline_hz": 0.3,
+    "odor_scale_hz": 25.5,
+    "odor_turn_gain": 2.5,
+    "baseline": {
+      "steer_left": 0.5625,
+      "steer_right": 0.0625,
+      "escape_left": 0.3125,
+      "escape_right": 0.625
+    },
+    "scale": {
+      "steer_left": 5.5625,
+      "steer_right": 5.0625,
+      "escape_left": 49.0,
+      "escape_right": 46.3
+    },
+    "calibration": {
+      "created_at": "2026-09-17T20:00:09",
+      "device": "cuda",
+      "flies": 8,
+      "seed": 1000,
+      "stimulus_strength": 0.8,
+      "responses_hz": {
+        "target_left": {
+          "steer_left": [
+            4.0,
+            4.0,
+            5.0,
+            4.0,
+            5.0,
+            4.0,
+            4.0,
+            5.0
+          ],
+          "steer_right": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "escape_left": [
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "escape_right": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "target_right": {
+          "steer_left": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "steer_right": [
+            3.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "escape_left": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "escape_right": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ]
+        },
+        "loom_left": {
+          "steer_left": [
+            0.0,
+            2.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "steer_right": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "escape_left": [
+            46.0,
+            48.0,
+            44.0,
+            45.0,
+            49.0,
+            46.0,
+            49.0,
+            44.0
+          ],
+          "escape_right": [
+            0.0,
+            2.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "loom_right": {
+          "steer_left": [
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "steer_right": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "escape_left": [
+            1.0,
+            2.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0
+          ],
+          "escape_right": [
+            44.0,
+            47.0,
+            41.0,
+            46.0,
+            45.0,
+            44.0,
+            45.0,
+            45.0
+          ]
+        }
+      }
+    }
+  },
+  "random_seeds": {
+    "steering_and_escape_weight_interventions": [
+      1101,
+      2203,
+      3307
+    ],
+    "decoder_calibration_seed": 1000
+  },
+  "baseline_protocol": {
+    "dt_seconds": 0.02,
+    "warmup_steps": 50,
+    "stimulus_steps": 50,
+    "stimulus_strength": 0.8,
+    "parallel_flies_per_seed": 8,
+    "trials_per_side": 24
+  },
+  "steering_baseline": {
+    "source": "config\\experiments\\lc10a_weight_intervention.json",
+    "condition": "baseline",
+    "left": {
+      "steer_left": {
+        "mean": 4.625,
+        "std": 0.563656,
+        "min": 4.0,
+        "max": 6.0
+      },
+      "steer_right": {
+        "mean": 0.125,
+        "std": 0.330719,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "final_turn": {
+        "mean": -0.693108,
+        "std": 0.087447,
+        "min": -0.871854,
+        "max": -0.453594
+      },
+      "integrated_turn_radians": {
+        "mean": -1.165707,
+        "std": 0.185619,
+        "min": -1.465263,
+        "max": -0.583207
+      },
+      "direction_correct": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "whole_brain_spikes": {
+        "mean": 393986.708333,
+        "std": 2027.023464,
+        "min": 390592.0,
+        "max": 398786.0
+      },
+      "whole_brain_rate_hz_per_neuron": {
+        "mean": 2.363448,
+        "std": 0.01216,
+        "min": 2.343083,
+        "max": 2.392238
+      },
+      "peak_fraction_spiking_per_step": {
+        "mean": 0.052946,
+        "std": 0.00153,
+        "min": 0.05006,
+        "max": 0.055531
+      }
+    },
+    "right": {
+      "steer_left": {
+        "mean": 0.125,
+        "std": 0.330719,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "steer_right": {
+        "mean": 3.416667,
+        "std": 0.493007,
+        "min": 3.0,
+        "max": 4.0
+      },
+      "final_turn": {
+        "mean": 0.58694,
+        "std": 0.119988,
+        "min": 0.257304,
+        "max": 0.765946
+      },
+      "integrated_turn_radians": {
+        "mean": 1.07284,
+        "std": 0.215066,
+        "min": 0.736103,
+        "max": 1.476435
+      },
+      "direction_correct": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "whole_brain_spikes": {
+        "mean": 395291.541667,
+        "std": 2214.01594,
+        "min": 390907.0,
+        "max": 400239.0
+      },
+      "whole_brain_rate_hz_per_neuron": {
+        "mean": 2.371275,
+        "std": 0.013281,
+        "min": 2.344973,
+        "max": 2.400954
+      },
+      "peak_fraction_spiking_per_step": {
+        "mean": 0.053648,
+        "std": 0.001801,
+        "min": 0.050414,
+        "max": 0.058728
+      }
+    },
+    "performance": {
+      "wall_seconds": 12.9561,
+      "simulated_seconds_per_fly": 12.0,
+      "realtime_factor": 0.9262,
+      "parallel_fly_seconds_per_wall_second": 7.4096
+    }
+  },
+  "escape_baseline": {
+    "source": "config\\experiments\\looming_weight_intervention.json",
+    "condition": "baseline",
+    "left": {
+      "escape_left": {
+        "mean": 47.083333,
+        "std": 1.320248,
+        "min": 44.0,
+        "max": 49.0
+      },
+      "escape_right": {
+        "mean": 1.166667,
+        "std": 0.849837,
+        "min": 0.0,
+        "max": 3.0
+      },
+      "action_triggered": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "action_latency_or_censor_seconds": {
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "whole_brain_spikes": {
+        "mean": 410122.625,
+        "std": 2260.281211,
+        "min": 405962.0,
+        "max": 415392.0
+      },
+      "whole_brain_rate_hz_per_neuron": {
+        "mean": 2.460244,
+        "std": 0.013559,
+        "min": 2.435285,
+        "max": 2.491854
+      },
+      "peak_fraction_spiking_per_step": {
+        "mean": 0.056172,
+        "std": 0.002461,
+        "min": 0.052136,
+        "max": 0.062052
+      }
+    },
+    "right": {
+      "escape_left": {
+        "mean": 1.25,
+        "std": 0.520416,
+        "min": 0.0,
+        "max": 2.0
+      },
+      "escape_right": {
+        "mean": 45.25,
+        "std": 1.613743,
+        "min": 41.0,
+        "max": 48.0
+      },
+      "action_triggered": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "action_latency_or_censor_seconds": {
+        "mean": 0.1,
+        "std": 0.0,
+        "min": 0.1,
+        "max": 0.1
+      },
+      "whole_brain_spikes": {
+        "mean": 408269.5,
+        "std": 1776.633028,
+        "min": 403762.0,
+        "max": 411749.0
+      },
+      "whole_brain_rate_hz_per_neuron": {
+        "mean": 2.449127,
+        "std": 0.010658,
+        "min": 2.422088,
+        "max": 2.47
+      },
+      "peak_fraction_spiking_per_step": {
+        "mean": 0.054795,
+        "std": 0.001068,
+        "min": 0.05249,
+        "max": 0.056815
+      }
+    },
+    "performance": {
+      "wall_seconds": 12.9166,
+      "simulated_seconds_per_fly": 12.0,
+      "realtime_factor": 0.929,
+      "parallel_fly_seconds_per_wall_second": 7.4323
+    }
+  },
+  "test_suite": {
+    "command": "-m unittest discover -s tests -v",
+    "python_executable": "D:\\miniconda\\envs\\flybrain\\python.exe",
+    "return_code": 0,
+    "tests_run": 37,
+    "reported_seconds": 0.697,
+    "passed": true,
+    "output_tail": "s_fly_in_heading_direction) ... ok\ntest_ground_height_varies_across_the_randomized_terrain (test_world_encoder.WorldEncoderTests.test_ground_height_varies_across_the_randomized_terrain) ... ok\ntest_height_hold_policy_produces_real_vertical_motion (test_world_encoder.WorldEncoderTests.test_height_hold_policy_produces_real_vertical_motion) ... ok\ntest_leaf_surface_collision_and_occlusion (test_world_encoder.WorldEncoderTests.test_leaf_surface_collision_and_occlusion) ... ok\ntest_looming_cannot_bypass_neural_action (test_world_encoder.WorldEncoderTests.test_looming_cannot_bypass_neural_action) ... ok\ntest_manual_action_without_threat_has_no_vertical_kick (test_world_encoder.WorldEncoderTests.test_manual_action_without_threat_has_no_vertical_kick) ... ok\ntest_neural_escape_uses_explicit_direction_policy (test_world_encoder.WorldEncoderTests.test_neural_escape_uses_explicit_direction_policy) ... ok\ntest_odor_rate_does_not_imply_vertical_direction (test_world_encoder.WorldEncoderTests.test_odor_rate_does_not_imply_vertical_direction) ... ok\ntest_plants_are_grounded_and_reset_geometry_is_reproducible (test_world_encoder.WorldEncoderTests.test_plants_are_grounded_and_reset_geometry_is_reproducible) ... ok\ntest_reset_generates_a_new_reproducible_layout (test_world_encoder.WorldEncoderTests.test_reset_generates_a_new_reproducible_layout) ... ok\ntest_target_side_changes_lc10a_balance (test_world_encoder.WorldEncoderTests.test_target_side_changes_lc10a_balance) ... ok\ntest_visual_height_corrects_for_body_pitch_and_bearing (test_world_encoder.WorldEncoderTests.test_visual_height_corrects_for_body_pitch_and_bearing) ... ok\ntest_visual_occlusion_is_reported (test_world_encoder.WorldEncoderTests.test_visual_occlusion_is_reported) ... ok\ntest_world_statistics_include_completed_trial_rates (test_world_encoder.WorldEncoderTests.test_world_statistics_include_completed_trial_rates) ... ok\n\n----------------------------------------------------------------------\nRan 37 tests in 0.697s\n\nOK\n"
+  },
+  "integrity_notes": [
+    "This manifest was created after the causal experiments from their preserved raw baseline conditions; it does not claim an earlier creation timestamp.",
+    "The source result hashes bind this summary to the full per-trial values stored in the two experiment JSON files.",
+    "All intervention and plasticity experiments report the same original weights checksum and modify weights only in process memory."
+  ]
+}

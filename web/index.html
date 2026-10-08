@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FlyWorld Lab · FlyBrain 闭环生态箱</title>
+    <link rel="stylesheet" href="/styles.css?v=8" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <p class="eyebrow">FLYBRAIN · CLOSED-LOOP VIRTUAL ECOLOGY</p>
+        <h1>FlyWorld Lab <span>果蝇神经闭环生态箱</span></h1>
+      </div>
+      <div class="status-line">
+        <span id="connection-dot" class="dot offline"></span><span id="connection">正在连接</span>
+        <span class="divider"></span><span id="device">DEVICE —</span><span id="rtf">RTF —</span>
+        <span class="mode-badge">FLYBRAIN ONLY</span>
+        <button id="toggle-diagnostics" class="icon-button" aria-expanded="true">收起诊断</button>
+      </div>
+    </header>
+
+    <main id="workspace">
+      <section class="viewport-card">
+        <div id="scene"></div>
+        <div class="scene-hud">
+          <div><strong>VIRTUAL ECOLOGY · PYTHON AUTHORITATIVE</strong><span>点击地面移动视觉目标 · 拖动自由相机 · 滚轮缩放</span></div>
+          <label class="camera-picker">相机
+            <select id="camera-mode" aria-label="相机模式">
+              <option value="free">自由视角</option><option value="chase">跟随视角</option>
+              <option value="first">果蝇第一视角</option><option value="top">顶视图</option>
+            </select>
+          </label>
+        </div>
+        <div class="scene-readout"><span><i class="cyan-dot"></i>腐果区 / 花朵区</span><span><i class="red-dot"></i>逼近威胁</span><span><i class="green-dot"></i>视觉 / 气味 / 局部风</span></div>
+        <div id="action-banner" class="action-banner">DNp01 ACTION · 急停 / 逃逸</div>
+
+        <details class="control-dock" open>
+          <summary>实验控制台</summary>
+          <div class="control-grid">
+            <div class="control-group"><h2>运行</h2><div class="button-row"><button id="pause">暂停</button><button id="single-step">单步 100 ms</button><button id="reset" class="muted">重置</button></div></div>
+            <div class="control-group"><h2>视觉场景</h2><div class="button-row"><button id="orbit">移动目标：关</button><button data-obstacle="-1">左侧威胁</button><button data-obstacle="0">中央威胁</button><button data-obstacle="1">右侧威胁</button></div></div>
+            <div class="control-group"><h2>手动神经刺激（仅诊断）</h2><div class="button-row"><button data-stimulus="target_left">LC10a L</button><button data-stimulus="target_right">LC10a R</button><button data-stimulus="loom_left">LC4/LPLC2 L</button><button data-stimulus="loom_right">LC4/LPLC2 R</button><button data-stimulus="odor_left">ORN L</button><button data-stimulus="odor_right">ORN R</button></div></div>
+            <div class="control-group range-group"><h2>固定速度策略 <span>非神经输出</span></h2><input id="speed-control" type="range" min="0" max="2.5" step="0.1" value="1.0" /><output id="speed-setting">1.0 m/s</output><a href="/api/logs/latest" download>下载当前 JSONL 日志</a></div>
+          </div>
+        </details>
+      </section>
+
+      <aside id="diagnostics" class="diagnostics">
+        <details class="panel flight-panel" open>
+          <summary><span>00</span><h2>三维飞行状态</h2><em>3D KINEMATICS</em></summary>
+          <div class="metric-grid"><div><label>飞行模式</label><strong id="flight-mode">—</strong></div><div><label>感觉行为状态</label><strong id="behavior-state">—</strong></div><div><label>位置 x/y/z</label><strong id="fly-position">—</strong></div><div><label>速度 vx/vy/vz</label><strong id="fly-velocity">—</strong></div><div><label>Yaw / Pitch</label><strong id="fly-attitude">—</strong></div><div><label>策略速度 / 目标高度</label><strong id="policy-motion">—</strong></div><div><label>神经 / 微扰 Yaw rate</label><strong id="yaw-rates">—</strong></div><div><label>局部风 / 阵风</label><strong id="local-wind">—</strong></div><div><label>找到 / 降落 / 碰撞 · 避碰率</label><strong id="world-stats">—</strong></div></div>
+          <p class="source">高度策略 <span id="height-policy">—</span><br>逃逸触发 / 垂直方向策略 <span id="escape-policy">—</span></p>
+          <p class="source">单步耗时（感觉 / 神经 / 运动）<span id="step-cost">—</span></p>
+          <p class="source policy-warning">垂直非神经输出：连续探索 / 视觉表面逼近。逃逸仅由 DNp01 action 授权，方向由感觉辅助策略选择；无可见威胁时仅制动。细小地表落叶、苔草及花梗为装饰，未进入碰撞模型。</p>
+        </details>
+        <details class="panel sensor-panel" open>
+          <summary><span>01</span><h2>环境感知</h2><em>WORLD → ENCODER</em></summary>
+          <div class="metric-grid"><div><label>目标 / 可见</label><strong id="target-visible">—</strong></div><div><label>距离 / TTC</label><strong id="target-distance">—</strong></div><div><label>方位 / 俯仰</label><strong id="target-bearing">—</strong></div><div><label>目标视觉角</label><strong id="target-angular-size">—</strong></div><div><label>遮挡</label><strong id="target-occluded">—</strong></div><div><label>威胁 Loom / TTC</label><strong id="loom-rate">—</strong></div><div><label>威胁距离</label><strong id="obstacle-distance">—</strong></div><div><label>气味 L / R</label><strong id="odor-concentration">—</strong></div><div><label>气味 dC/dt</label><strong id="odor-rate">—</strong></div></div>
+        </details>
+        <details class="panel input-panel" open>
+          <summary><span>02</span><h2>模拟器输入</h2><em>ENCODER → FLYBRAIN</em></summary>
+          <div class="signal-row"><label>LC10a L</label><div class="bar"><i id="lc10a-l-bar"></i></div><output id="lc10a-l">—</output></div><div class="signal-row"><label>LC10a R</label><div class="bar"><i id="lc10a-r-bar"></i></div><output id="lc10a-r">—</output></div><div class="signal-row"><label>LC4/LPLC2 L</label><div class="bar"><i id="loom-l-bar"></i></div><output id="loom-l">—</output></div><div class="signal-row"><label>LC4/LPLC2 R</label><div class="bar"><i id="loom-r-bar"></i></div><output id="loom-r">—</output></div><div class="signal-row"><label>ORN DM1/VA2 L</label><div class="bar"><i id="odor-l-bar"></i></div><output id="odor-l">—</output></div><div class="signal-row"><label>ORN DM1/VA2 R</label><div class="bar"><i id="odor-r-bar"></i></div><output id="odor-r">—</output></div><p class="source">注入来源 <span id="input-source">—</span></p>
+        </details>
+        <details class="panel brain-panel" open>
+          <summary><span>03</span><h2>FlyBrain 输出</h2><em>SPIKE → RATE</em></summary>
+          <div class="neural-table"><div class="table-head"><span>population</span><span>本步 spike</span><span>260 ms rate</span></div><div><b>DNa02 L</b><strong id="dna-l-spike">—</strong><strong id="dna-l">—</strong></div><div><b>DNa02 R</b><strong id="dna-r-spike">—</strong><strong id="dna-r">—</strong></div><div><b>DNp01 L</b><strong id="dnp-l-spike">—</strong><strong id="dnp-l">—</strong></div><div><b>DNp01 R</b><strong id="dnp-r-spike">—</strong><strong id="dnp-r">—</strong></div><div><b>ORN food L</b><strong id="orn-l-spike">—</strong><strong id="orn-l">—</strong></div><div><b>ORN food R</b><strong id="orn-r-spike">—</strong><strong id="orn-r">—</strong></div></div>
+          <p class="source">全脑 <span id="total-spikes">—</span> spikes · DN <span id="dn-spikes">—</span> · <span id="window-ms">—</span> ms 窗口</p>
+        </details>
+        <details class="panel decoder-panel" open>
+          <summary><span>04</span><h2>Decoder 输出</h2><em>NEURAL ONLY</em></summary>
+          <div class="decoder-values"><div><label>RAW TURN</label><strong id="raw-turn">—</strong></div><div><label>ODOR TURN</label><strong id="odor-turn">—</strong></div><div><label>FILTERED</label><strong id="filtered-turn">—</strong></div><div><label>SPEED</label><strong id="speed">—</strong></div><div><label>ACTION</label><strong id="action">—</strong></div></div><div class="turn-gauge"><i id="turn-indicator"></i></div><p class="source">turn = DNa02 + 已验证 ORN spike 差 · action = DNp01 · speed = 固定策略</p>
+        </details>
+        <details class="panel timeline-panel" open>
+          <summary><span>05</span><h2>最近十秒</h2><em>10 HZ</em></summary>
+          <div class="legend"><span class="lc-input">视觉差</span><span class="odor-output">ORN 差</span><span class="dn-output">DNa02 差</span><span class="turn-output">Turn</span><span class="escape-output">Action</span></div><canvas id="timeline"></canvas>
+        </details>
+      </aside>
+    </main>
+    <script type="module" src="/app.js?v=9"></script>
+  </body>
+</html>

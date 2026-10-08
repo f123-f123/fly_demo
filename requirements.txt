@@ -1,0 +1,18 @@
+# Python 3.11; CPU runtime, experiments and tests. See ENVIRONMENT.md.
+flybrain==0.1.0
+numpy==2.4.6
+scipy==1.17.1
+numba==0.67.0
+aiohttp==3.14.3
+
+# Transitive runtime dependencies, pinned to the verified environment.
+llvmlite==0.49.0
+aiohappyeyeballs==2.7.1
+aiosignal==1.4.0
+attrs==26.1.0
+frozenlist==1.8.0
+idna==3.19
+multidict==6.8.0
+propcache==0.5.4
+typing_extensions==4.16.0
+yarl==1.25.1
